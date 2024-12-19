@@ -1,0 +1,46 @@
+
+.styleCSS:focus {
+    outline: none;
+    box-shadow: 0 0 0px rgba(0, 123, 255, 0.5);
+    cursor: text;
+}
+
+.styleCSS span.selector,
+span.brace, span.keyword {
+    color: #eaf458;
+}
+
+.styleCSS span.property{
+    color: #89d4fc;
+}
+
+.styleCSS span.value , span.number{
+    color: #e75454;
+}
+
+
+.scriptJS span.object {
+    color: #2288e7;
+}
+
+.scriptJS span.methode{
+    color: #89d4fc;
+    color: #deca4a;
+
+}
+.scriptJS span.parameter{
+    color: #e36e25;
+
+}
+.scriptJS span.bracket , span.number{
+    color: #cece2a;
+
+}
+
+
+.activeLine{
+    /* border: 1px solid rgba(77, 76, 76, 0.338); */
+    margin-left: -40px;
+    padding-left: 40.0123456789px;
+
+}
