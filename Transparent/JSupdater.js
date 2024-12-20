@@ -2,19 +2,26 @@
 scriptJStextArea = document.querySelector('textarea.scriptJS');
 scriptJSpre = document.querySelector('pre.scriptJS');
 
-
 function highlightedJSCode(input) {
-    //    const functionreg = /(\b[a-zA-Z_][a-zA-Z0-9_]*\b))/g;
-    //    let formatCode = input.replace(functionreg , `<span class="fxn">$1</span>`);
-    //    formatCode = formatCode.replace(/(\(|\))/g , `<span class="bracket">$1</span>`);
-    //    const methode = /(?<=\.)[a-zA-Z_][a-zA-Z0-9_]*/g
-   return input
-   .replace(/\((("|')[\w]+("|'))\)/g , '(<span class="parameter">$1</span>)').
-    replace(/\.?([\w]+)\./g , `<span class="object">$1</span>.`)
-   .replace(/\.?([\w]+)\(/g , `.<span class="methode">$1</span>(`)
-   .replace(/\('"([^'";\)]+)/g , `<span class="parameter">$1</span>`)
-   .replace(/(\))|({)|(})|(\()/g , `<span class="bracket">$1$2$3$4</span>`);
+    return input
+        // Highlight keywords
+        .replace(/\b(const|let|var|function|return|if|else|for|while|do|switch|case|break|continue|try|catch|finally|throw|new|class|extends|import|export|typeof|instanceof|delete)\b/g, 
+            '<span class="keyword">$1</span>')
+        // Highlight numbers
+        .replace(/\b\d+(\.\d+)?\b/g, '<span class="number">$&</span>')
+        .replace(/\.([\w]+)\(/g, '.<span class="method">$1</span>(')
+        // // Highlight strings
+      
+        // // Highlight booleans
+        .replace(/\b(true|false|null|undefined)\b/g, '<span class="boolean">$1</span>')
+        // Highlight brackets
+        .replace(/([{}()\[\]])/g, '<span class="bracket">$1</span>')
+        .replace(/\.([\w]+)\./g, '.<span class="object">$1</span>.')
+        .replace(/([^>\()]+['"])+[$<\))]/g , `<span class="str">$1</span><`)
+        .replace(/(\.([\w])+\s*[$\=])/g, '<span class="property">$1</span>')
 }
+
+
 
 
 

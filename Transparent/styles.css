@@ -3,6 +3,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-weight: 500;
+
 }
 
 body {
@@ -100,7 +102,7 @@ pre,
     bottom: 0;
     width: 100%;
     padding: 10px;
-    background-color: #0f0f10;
+    background-color: #222223;
     color: white;
     border: 1px solid #ccc;
     white-space: pre-wrap;
@@ -151,17 +153,17 @@ textarea {
 
 .tag {
     color: #117cce;
-    color: #258cd6;
+    color: #0e9ef1;
 }
 
 .attr {
     color: #3dcbff;
-    color: #5CCFE6;;
+    color: #28d3f5;
 }
 
 .value {
     color: #e64747;
-    color: #eb6363;
+    color: #f06423;
 
 }
 

@@ -61,7 +61,7 @@ textarea.addEventListener("input", () => {
 AreaCSS.addEventListener('input', (e) => {
     updateEditor()
     styleCSSpre.innerHTML = MahtabCsshighlightCSSWithEntities(styleCSStextArea.value);
-    Hrline(styleCSStextArea)
+    Hrline(styleCSStextArea);
 });
 
 
@@ -83,6 +83,29 @@ scriptJStextArea.addEventListener('click', (e) => {
     scriptJSpre.innerHTML = highlightedJSCode(scriptJStextArea.value);
     Hrline(scriptJStextArea)
 });
+
+
+
+textarea.addEventListener("scroll", () => {
+    highlightedDiv.scrollTop = textarea.scrollTop; // Sync scrolling
+    document.querySelector('.divvvvv').scrollTop = textarea.scrollTop;// Sync scrolling
+
+});
+
+
+AreaCSS.addEventListener('scroll', (e) => {
+    styleCSSpre.scrollTop = AreaCSS.scrollTop; // Sync scrolling
+    document.querySelector('.divvvvv').scrollTop = AreaCSS.scrollTop;// Sync scrolling
+
+});
+
+
+scriptJStextArea.addEventListener('scroll', (e) => {
+    scriptJSpre.scrollTop = scriptJStextArea.scrollTop; // Sync scrolling
+    document.querySelector('.divvvvv').scrollTop = scriptJStextArea.scrollTop;// Sync scrolling
+
+});
+
 
 FilesClicker.forEach(f => {
     f.addEventListener('click', () => {
@@ -169,7 +192,7 @@ function highlightSyntax() {
         lineDiv.innerText = line || ' ';
         // lineDiv = HighlightLineDiv(lineDiv);
         lineDiv.innerHTML = ff(lineDiv.innerHTML);
-        console.log(ff(lineDiv.innerHTML))
+        // console.log(ff(lineDiv.innerHTML))
         file.appendChild(lineDiv);
 
     })
@@ -195,18 +218,13 @@ function highlightSyntax() {
     }
 
 
-    console.log(file);
+    // console.log(file);
     return file.innerHTML;
 }
 
 
 
 
-textarea.addEventListener("scroll", () => {
-    highlightedDiv.scrollTop = textarea.scrollTop; // Sync scrolling
-    document.querySelector('.divvvvv').scrollTop = textarea.scrollTop;// Sync scrolling
-
-});
 
 
 function formatCode() {
@@ -226,19 +244,19 @@ function formatCode() {
 textarea.value = `<!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8"/>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <title>Document</title>
-   <link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    
 </head>
 <body>
-
-   <h1>Welcome to the Live Preview</h1>
-   <p>Edit the code on the left to see changes instantly!</p>
-
-<\/body>    
-</html>   
+    
+    <h1>Welcome to the Live Preview</h1>
+    <p>Edit the code on the left to see changes instantly!</p>
+     
+<\/body>
+</html>
 `;
 
 
@@ -356,7 +374,7 @@ function TagTypeditector(str) {
 
 function getInditation(type) {
 
-    if (type === 'openingTag') {
+    if (type === 'Opening tag') {
         if (justClose) {
             prevInditation -= 3;
 
@@ -364,7 +382,7 @@ function getInditation(type) {
         prevInditation += 3;
         justClose = false;
 
-    } else if (type === 'closingTag') {
+    } else if (type === 'Closing tag') {
         prevInditation -= 3;
         justClose = true;
     } else {

@@ -5,35 +5,53 @@
     cursor: text;
 }
 
-.styleCSS span.selector,
-span.brace, span.keyword {
-    color: #eaf458;
+.styleCSS span.property {
+    color: #18dcfe;
+
 }
 
-.styleCSS span.property{
-    color: #89d4fc;
+.styleCSS span.selector,
+span.bracket, span.keyword {
+    color: #eaf72b;
 }
+
 
 .styleCSS span.value , span.number{
-    color: #e75454;
+    color: #ff6e3e;
 }
 
 
 .scriptJS span.object {
-    color: #2288e7;
+    color: #00f2fe;
 }
 
-.scriptJS span.methode{
-    color: #89d4fc;
-    color: #deca4a;
+
+.scriptJS span.property {
+    color: #f7d705;
 
 }
-.scriptJS span.parameter{
+
+.scriptJS span.boolean{
+    color: #00feed;
+}
+
+.scriptJS span.method{
+    color: #0ca2f3;
+    /* color: #dabf0b; */
+
+}
+
+span.keyword{
+    color: #205cff;
+    /* color: #dabf0b; */
+
+}
+.scriptJS span.parameter , span.str{
     color: #e36e25;
 
 }
 .scriptJS span.bracket , span.number{
-    color: #cece2a;
+    color: #ffe600;
 
 }
 

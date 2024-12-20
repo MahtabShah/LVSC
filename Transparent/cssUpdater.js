@@ -2,36 +2,19 @@ styleCSSpre = document.querySelector('pre.styleCSS');
 
 
 function MahtabCsshighlightCSSWithEntities(input) {
-    // Escape '<' and '>' for HTML safety
-    const escapedInput = input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-    return escapedInput.replace(
-        /([\w-]+)\s*:\s*([^;]+;?)|([\w.#][^{]*){|}/g,
-        (match, property, value, selector) => {
+    let Linedivs = input.split('\n');
+    let file = document.createElement('div');
+    Linedivs.forEach(line => {
+        let lineDiv = document.createElement('div');
+        lineDiv.classList.add('Hrline')
+        lineDiv.innerText = line || ' ';
+        lineDiv = HighlightCSSLineDiv(lineDiv);
+        file.appendChild(lineDiv);
 
-
-
-
-            if (selector) {
-                // Highlight selectors
-                console.log("selector", selector);
-                return `<span class="selector">${MahtabCssescapeHTML(selector)}{</span>`;
-            } else if (property && value) {
-                // Ensure the value ends at the first semicolon
-                const trimmedValue = value.trim().endsWith(';')
-                    ? value.trim()
-                    : `${value.trim()};`;
-                return `<span class="property">${MahtabCssescapeHTML(property)}</span>: <span class="value">${MahtabCssescapeHTML(trimmedValue)}</span>`;
-            } else if (match === '}') {
-                // Highlight closing brace
-
-                return `<span class="brace">}</span>`;
-            }
-            return match;
-        }
-    );
+    });
+    return file.innerHTML;
 }
-
 
 function MahtabCssescapeHTML(str) {
     return str
@@ -49,117 +32,40 @@ function MahtabCssupdateEditor() {
 }
 
 
+function HighlightCSSLineDiv(lineDiv) {
 
-// Csseditor.addEventListener('keydown', (event) => {
-   
-//     let listContainer = document.querySelector('.MslistOfCss2PropAto');
-//     let cssSuggestions = document.querySelectorAll('.MslistOfCss2PropAto span');
+    lineDiv.innerText.replace(/([^]+{)|([^{;]+\s*:\s*)([^:]+;}?)/g, (match, selector, property, value) => {
+        if (selector) {
+            lineDiv.innerHTML = `<span class="selector">${selector}</span>`
 
+        } else if (property && value) {
+            lineDiv.innerHTML = `<span class="property">${property}</span><span class="value">${value}</span>`
 
+        }
+    })
 
-//     function searchCSSProperty(text) {
-//         let matches = [];
-//         cssSuggestions.forEach((suggestion) => {
-//             let matchLength = text.length;
+    if (lineDiv.innerText.trim() === '}') {
+        lineDiv.innerHTML = `<span class="bracket">${lineDiv.innerText}</span>`;
 
-//             if (suggestion.innerText.substr(0, matchLength) === text) {
-//                 matches.push(suggestion.innerText);
-
-//                 // Move matched suggestions to the top
-//                 listContainer.insertBefore(suggestion, listContainer.children[0]);
-//             }
-//         });
-//         return matches.length > 0 ? matches[0] : text;
-//     }
+    }
+    return lineDiv;
+}
 
 
-//      listContainer.classList.add('MsactiveCssList');
+function searchCSSProperty(text) {
+    let matches = [];
+    cssSuggestions.forEach((suggestion) => {
+        let matchLength = text.length;
 
+        if (suggestion.innerText.substr(0, matchLength) === text) {
+            matches.push(suggestion.innerText);
 
-//     if (event.key === "}") {
-//         if (listContainer.classList.contains('MsactiveCssList')) {
-//             listContainer.classList.remove('MsactiveCssList');
-
-//         }
-
-//     }
-
-//     const trimmedText = cursorNode.textContent.trim();
-//     const matchedText = searchCSSProperty(trimmedText);
-
-//     if (event.key === '/') {
-
-//         cursorNode.nodeValue = `\n    ${matchedText}\n`;
-//         cursorNode.textContent = `\n    ${matchedText}\n`;
-//         const newCursorOffset = cursorNode.nodeValue.length - 1;
-//         const newRange = document.createRange();
-//         newRange.setStart(cursorNode, newCursorOffset);
-//         newRange.collapse(true);
-//         selection.removeAllRanges();
-//         selection.addRange(newRange);
-//         event.preventDefault();
-
-//         if (listContainer.classList.contains('MsactiveCssList')) {
-//             listContainer.classList.remove('MsactiveCssList');
-
-//         }
-
-//     }
-
-
-
-//     if (cursorNode.nodeType === Node.TEXT_NODE) {
-
-
-
-
-
-//         const text = cursorNode.textContent;
-//         const beforeCursor = text.slice(0, cursorOffset);
-
-
-
-//         // Auto-insert closing curly braces
-//         if (beforeCursor.endsWith('{')) {
-//             const afterCursor = text.slice(cursorOffset);
-//             cursorNode.textContent = beforeCursor;
-
-
-//             if (!beforeCursor.trim().endsWith('}')) {
-
-//                 cursorNode.textContent += '\n\n}'
-//             }
-
-//             cursorNode.textContent += afterCursor;
-
-//             // Set cursor inside the braces
-//             const newCursorOffset = beforeCursor.length + 60;
-//             const newRange = document.createRange();
-//             newRange.setStart(cursorNode, newCursorOffset);
-//             newRange.collapse(true);
-//             selection.removeAllRanges();
-//             selection.addRange(newRange);
-//         }
-
-//         // Auto-insert semicolon for CSS properties
-//         const propertyMatch = beforeCursor.match(/([a-zA-Z0-9-]+):$/);
-//         if (propertyMatch) {
-//             const afterCursor = text.slice(cursorOffset);
-//             cursorNode.textContent = beforeCursor + ' ;' + afterCursor;
-
-//             // Set cursor after the semicolon
-//             const newCursorOffset = beforeCursor.length + 1;
-//             const newRange = document.createRange();
-//             newRange.setStart(cursorNode, newCursorOffset);
-//             newRange.collapse(true);
-//             selection.removeAllRanges();
-//             selection.addRange(newRange);
-//         }
-//     }
-
-//     MahtabCssupdateEditor();
-// });
-
+            // Move matched suggestions to the top
+            listContainer.insertBefore(suggestion, listContainer.children[0]);
+        }
+    });
+    return matches.length > 0 ? matches[0] : text;
+}
 
 
 // Initialize editor with default content
