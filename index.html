@@ -11,12 +11,21 @@
     <link rel="stylesheet" href="Transparent/styles.css">
     <link rel="stylesheet" href="Transparent/helping.css">
     <link rel="stylesheet" href="Transparent/cssEditor.css">
+    <link rel="stylesheet" href="Transparent/upperfile.css">
+    <link rel="stylesheet" href="Transparent/leftcssM.css">
 
 
     <style>
+        .MsactiveCssList {
+            display: flex;
+            z-index: 6666666;
+        }
+
+
+
         .display-none,
         .overT {
-            display: none; 
+            display: none;
         }
 
         .OnFileeditor {
@@ -31,7 +40,7 @@
 
 <body>
 
-    
+
     <div class="mainSection display-flex">
 
         <div class="Section1">
@@ -104,21 +113,221 @@
             </div>
 
 
+            <div class="helpinglist MslistOfCss2PropAto">
+                <span>margin: 4px;</span>
+                <span>padding: 5px;</span>
+                <span>border: 1px solid red;</span>
+                <span>background-color: #f0f0f0;</span>
+                <span>color: #333;</span>
+                <span>font-size: 16px;</span>
+                <span>font-weight: bold;</span>
+                <span>font-style: italic;</span>
+                <span>text-decoration: underline;</span>
+                <span>text-transform: capitalize;</span>
+                <span>letter-spacing: 2px;</span>
+                <span>word-spacing: 4px;</span>
+                <span>line-height: 1.5;</span>
+                <span>text-align: center;</span>
+                <span>vertical-align: middle;</span>
+                <span>display: inline-block;</span>
+                <span>width: auto;</span>
+                <span>height: auto;</span>
+                <span>overflow: hidden;</span>
+                <span>white-space: nowrap;</span>
+                <span>clip-path: circle(50%);</span>
+                <span>opacity: 0.8;</span>
+                <span>box-shadow: 2px 2px 5px rgba(0,0,0,0.3);</span>
+                <span>transition: all 0.3s ease;</span>
+                <span>transform: rotate(10deg);</span>
+                <span>position: relative;</span>
+                <span>top: 10px;</span>
+                <span>left: 20px;</span>
+                <span>z-index: 100;</span>
+                <span>cursor: pointer;</span>
+                <span>visibility: visible;</span>
+                <span>overflow-x: auto;</span>
+                <span>overflow-y: scroll;</span>
+                <span>background-image: url('example.jpg');</span>
+                <span>background-repeat: no-repeat;</span>
+                <span>background-size: cover;</span>
+                <span>background-position: center;</span>
+                <span>border-radius: 5px;</span>
+                <span>border-top: 2px solid red;</span>
+                <span>border-right: 2px dashed blue;</span>
+                <span>border-bottom: 3px dotted green;</span>
+                <span>border-left: 4px double black;</span>
+                <span>outline: 1px solid #000;</span>
+                <span>outline-offset: 2px;</span>
+                <span>box-sizing: border-box;</span>
+                <span>clip: rect(10px, 20px, 30px, 40px);</span>
+                <span>filter: blur(5px);</span>
+                <span>filter: brightness(0.8);</span>
+                <span>filter: contrast(120%);</span>
+                <span>grid-template-columns: 1fr 2fr;</span>
+                <span>grid-template-rows: auto 100px;</span>
+                <span>align-items: center;</span>
+                <span>justify-content: space-between;</span>
+                <span>flex-direction: row;</span>
+                <span>flex-wrap: wrap;</span>
+                <span>align-content: space-around;</span>
+                <span>gap: 10px;</span>
+                <span>animation: fadeIn 2s ease-in-out;</span>
+                <span>animation-delay: 1s;</span>
+                <span>animation-duration: 3s;</span>
+                <span>animation-iteration-count: infinite;</span>
+                <span>animation-name: slideIn;</span>
+                <span>animation-timing-function: linear;</span>
+                <span>content: "Custom Text";</span>
+                <span>quotes: "«" "»";</span>
+                <span>list-style-type: square;</span>
+                <span>list-style-position: inside;</span>
+                <span>list-style-image: url('bullet.png');</span>
+                <span>float: left;</span>
+                <span>clear: both;</span>
+                <span>pointer-events: none;</span>
+                <span>resize: both;</span>
+                <span>min-width: 100px;</span>
+                <span>max-width: 500px;</span>
+                <span>min-height: 50px;</span>
+                <span>max-height: 300px;</span>
+                <span>perspective: 500px;</span>
+                <span>will-change: transform;</span>
+                <span>user-select: none;</span>
+                <span>writing-mode: vertical-lr;</span>
+                <span>text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);</span>
+                <span>text-overflow: ellipsis;</span>
+                <span>direction: rtl;</span>
+                <span>unicode-bidi: bidi-override;</span>
+                <span>word-break: break-word;</span>
+                <span>tab-size: 4;</span>
+                <span>margin-top: 10px;</span>
+                <span>margin-right: 15px;</span>
+                <span>margin-bottom: 20px;</span>
+                <span>margin-left: 25px;</span>
+                <span>padding-top: 5px;</span>
+                <span>padding-right: 10px;</span>
+                <span>padding-bottom: 15px;</span>
+                <span>padding-left: 20px;</span>
+                <span>top: 50px;</span>
+                <span>right: 40px;</span>
+                <span>bottom: 30px;</span>
+                <span>left: 20px;</span>
+                <span>display: block;</span>
+                <span>display: flex;</span>
+                <span>display: grid;</span>
+                <span>display: inline;</span>
+                <span>display: inline-flex;</span>
+                <span>display: inline-grid;</span>
+                <span>display: none;</span>
+                <span>align-self: center;</span>
+                <span>justify-self: end;</span>
+                <span>order: 2;</span>
+                <span>grid-column: 1 / 3;</span>
+                <span>grid-row: 2 / span 3;</span>
+                <span>grid-area: header;</span>
+                <span>column-gap: 20px;</span>
+                <span>row-gap: 10px;</span>
+                <span>font-family: 'Arial', sans-serif;</span>
+                <span>font-variant: small-caps;</span>
+                <span>font-kerning: auto;</span>
+                <span>font-size-adjust: 0.58;</span>
+                <span>line-height: normal;</span>
+                <span>letter-spacing: 1px;</span>
+                <span>word-spacing: 2px;</span>
+                <span>color: #FF5733;</span>
+                <span>background: linear-gradient(to right, red, yellow);</span>
+                <span>background-clip: text;</span>
+                <span>background-attachment: fixed;</span>
+                <span>background-origin: border-box;</span>
+                <span>border-width: 2px;</span>
+                <span>border-style: dashed;</span>
+                <span>border-color: #00FF00;</span>
+                <span>border-collapse: collapse;</span>
+                <span>border-spacing: 5px;</span>
+                <span>border-image: url('border.png') 30 round;</span>
+                <span>border-image-slice: 20%;</span>
+                <span>opacity: 0.7;</span>
+                <span>clip-path: polygon(50% 0%, 0% 100%, 100% 100%);</span>
+                <span>mix-blend-mode: multiply;</span>
+                <span>isolation: isolate;</span>
+                <span>perspective-origin: center;</span>
+                <span>backface-visibility: hidden;</span>
+                <span>transform-origin: bottom left;</span>
+                <span>transform: scale(1.2) rotate(45deg);</span>
+                <span>transition-property: all;</span>
+                <span>transition-duration: 0.3s;</span>
+                <span>transition-timing-function: ease-in-out;</span>
+                <span>transition-delay: 0.5s;</span>
+                <span>animation-name: bounce;</span>
+                <span>animation-duration: 2s;</span>
+                <span>animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);</span>
+                <span>animation-fill-mode: forwards;</span>
+                <span>overflow-x: hidden;</span>
+                <span>overflow-y: auto;</span>
+                <span>resize: horizontal;</span>
+                <span>clip: rect(0, 10px, 10px, 0);</span>
+                <span>content: attr(data-title);</span>
+                <span>box-shadow: 5px 5px 15px rgba(0,0,0,0.5);</span>
+                <span>text-shadow: 2px 2px 5px #000;</span>
+                <span>vertical-align: baseline;</span>
+                <span>text-overflow: clip;</span>
+                <span>writing-mode: horizontal-tb;</span>
+                <span>caret-color: red;</span>
+                <span>outline-color: blue;</span>
+                <span>outline-style: dotted;</span>
+                <span>outline-width: 3px;</span>
+                <span>outline-offset: 5px;</span>
+                <span>scroll-behavior: smooth;</span>
+                <span>overscroll-behavior: contain;</span>
+                <span>place-content: stretch;</span>
+                <span>align-tracks: center;</span>
+                <span>justify-tracks: start;</span>
+                <span>filter: grayscale(50%);</span>
+                <span>filter: hue-rotate(90deg);</span>
+                <span>backdrop-filter: blur(10px);</span>
+                <span>user-select: text;</span>
+                <span>pointer-events: auto;</span>
+                <span>direction: ltr;</span>
+                <span>unicode-bidi: isolate;</span>
+                <span>white-space: pre-line;</span>
+                <span>visibility: hidden;</span>
+                <span>overflow-wrap: break-word;</span>
+                <span>box-sizing: content-box;</span>
+                <span>image-rendering: crisp-edges;</span>
+                <span>aspect-ratio: 16 / 9;</span>
+                <span>object-fit: contain;</span>
+                <span>object-position: top left;</span>
+                <span>gap: 1rem;</span>
+                <span>place-items: start;</span>
+                <span>place-self: auto;</span>
+
+
+
+
+            </div>
+
+
             <div class="filessidebar Mahtableft display-flex">
                 <span class="Mahtabfiles"><i class="fa-brands fa-windows"></i></span>
                 <span id="copyBtn"><i class="fa-regular fa-copy"></i></span>
                 <span id="shareBtn"><i class="fa-solid fa-share-from-square"></i></span>
                 <span id="downloadBtn"><i class="fa-solid fa-download"></i></span>
+                <span id="feedbackBtn"><i class="fa-regular fa-message"></i></span>
+                <!-- <span id="rateHere"><i class="fa-regular fa-star"></i></span> -->
 
             </div>
 
 
+
+
+
             <div class="left display-none">
                 <div class="codefiles display-flex">
-                    <span class="M-click"><i class="fa-solid fa-angle-down"></i><b>main</b></span>
-                    <span class="A-click"><i class="fa-solid fa-folder-open"></i></span>
+                    <span class="M-click"><b>main</b></span>
+                    <!-- <i class="fa-solid fa-angle-down"></i> -->
+                    <!-- <span class="A-click"><i class="fa-solid fa-folder-open"></i></span> -->
                     <span class="B-click"><i class="fa-solid fa-folder-plus"></i></span>
-                    <span class="C-click"><i class="fa-solid fa-file-import"></i></span>
+                    <!-- <span class="C-click"><i class="fa-solid fa-file-import"></i></span> -->
 
                 </div>
 
@@ -157,6 +366,7 @@
 
 
                 <div class="editor-container-area display-flex" id="editor-container-area">
+
                     <div class="upperFiles display-flex">
                         <div class="upperFilesdiv display-flex">
 
@@ -174,10 +384,16 @@
                             <div class="click-F index MSindex742-23b2" id="scriptJS"><span
                                     class="Ms7cjs-2ex">JS</span><span>script.js</span>
                             </div>
+
+                        </div>
+                        <div class="formateDiv">
+                            <div class="formateline1"></div>
+                            <div class="formateline2"></div>
+                            <div class="formateline3"></div>
                         </div>
 
                     </div>
-  
+
                     <div class="ch-Div editor-container display-flex">
 
                         <div class="resizable-handle" id="resize-handle">
@@ -338,13 +554,23 @@
                             <pre id="highlightedJSCodeInput" class="overT scriptJS JSeditor display-none"
                                 spellcheck="false"></pre>
                         </div>
+                        <div class="rateingContainer">
+                            
+                            <textarea name="" id="" class="rateingTXTarea" placeholder="Write here for any improvement or any feed back......."></textarea>
 
+                            <div class="controllBtnFedd">
+                              <div class="divBtnM Ms-Submit">Submit</div>
+                              <div class="divBtnM Ms-Canc">Cancel</div>
+                            </div>
+
+                        </div>
                         <div class="DivtextAr">
                             <textarea name="html" id="codeInput" class="overT editor indexHTML display-none"
                                 spellcheck="false" style="user-select: none;"></textarea>
-                            <textarea name="css" id="CSSCodeInput" class="overT styleCSS" spellcheck="false" style="user-select: none;"></textarea>
-                            <textarea name="js" id="JSCodeInput" class="overT scriptJS display-none"
-                                spellcheck="false" style="user-select: none;"></textarea>
+                            <textarea name="css" id="CSSCodeInput" class="overT styleCSS" spellcheck="false"
+                                style="user-select: none;"></textarea>
+                            <textarea name="js" id="JSCodeInput" class="overT scriptJS display-none" spellcheck="false"
+                                style="user-select: none;"></textarea>
                         </div>
                     </div>
 
@@ -380,7 +606,7 @@
     <script src="Transparent/leftapk.js"></script>
     <script src="Transparent/cssUpdater.js"></script>
     <script src="Transparent/JSupdater.js"></script>
-    <!-- <script src="cssEditor.js"></script> -->
+    <script src="Transparent/Emmetapk.js"></script>
 
 
 

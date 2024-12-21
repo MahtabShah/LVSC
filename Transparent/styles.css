@@ -248,7 +248,7 @@ pre::-webkit-scrollbar {
 
     min-width: 200px;
     max-width: 200px;
-    border-right: 1px solid rgb(54, 53, 53);
+    /* border-right: 1px solid rgb(54, 53, 53); */
     z-index: 20;
     position: relative;
     background-color: #141414;
@@ -260,8 +260,9 @@ pre::-webkit-scrollbar {
     /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid rgba(219, 213, 213, 0.632);
+    box-sizing: border-box;
+    padding: 4px;
+    border-bottom: 1px solid rgba(219, 213, 213, 0.148);
     color: #ced4d7;
 }
 
@@ -270,8 +271,9 @@ pre::-webkit-scrollbar {
     /* border: 1px solid red; */
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-    font-size: 1.2rem;
+    padding: 1px 0;
+    font-size: 1.091rem;
+
 }
 
 

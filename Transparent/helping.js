@@ -1,6 +1,6 @@
 let HTMLSuggestions = document.querySelectorAll('.MslistOfhtm2PropAto span');
 let HTMLlistContainer = document.querySelector('.MslistOfhtm2PropAto');
-let AllHtmlPreference = document.querySelectorAll('.helpinglist span')
+let AllHtmlPreference = document.querySelectorAll('.MslistOfhtm2PropAto span')
 
 let TextArea = document.getElementById("codeInput");
 const preElement = document.querySelector(".ch-Div");

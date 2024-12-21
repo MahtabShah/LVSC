@@ -60,3 +60,23 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     // Clean up by revoking the Blob URL
     URL.revokeObjectURL(link.href);
 });
+
+
+document.querySelector('#feedbackBtn').addEventListener('click', () => {
+
+    document.querySelector('.rateingContainer').style.display = 'flex';
+});
+
+document.querySelector('.Ms-Submit').addEventListener('click', () => {
+
+    document.querySelector('.rateingContainer').style.display = 'none';
+    alert("Thanks for feedback...!");
+
+}); 
+
+document.querySelector('.Ms-Canc').addEventListener('click', () => {
+
+    document.querySelector('.rateingContainer').style.display = 'none';
+
+});
+

@@ -27,14 +27,23 @@ let styleCSSpre = document.querySelector('pre.styleCSS');
 let scriptJStextArea = document.querySelector('textarea.scriptJS');
 let scriptJSpre = document.querySelector('pre.scriptJS');
 
-styleCSStextArea.value = `
-body{
+styleCSStextArea.value = `body{
     background-color: #e6e6e6;
+    outline-style: dotted;
+    
 }
 
 h1{
     color: #3444f5;
     font-family: sans-serif;
+    font-size: 36px;
+    padding-left: 20px;
+}
+
+p{
+    font-family: sans-serif;
+    padding-left: 20px;
+         
 }`;
 
 scriptJStextArea.value = `console.log("Hello")
@@ -131,7 +140,21 @@ FilesClicker.forEach(f => {
 
         }
 
-    })
+        CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto');
+        HTMLlistContainer = document.querySelector('.MslistOfhtm2PropAto');
+
+
+        if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
+            CSSPrefListContainer.classList.remove('MsactiveCssList');
+        }
+
+        if (HTMLlistContainer.classList.contains('MsactiveCssList')) {
+            HTMLlistContainer.classList.remove('MsactiveCssList');
+        }
+
+    });
+
+
 });
 
 
@@ -254,7 +277,7 @@ textarea.value = `<!DOCTYPE html>
     
     <h1>Welcome to the Live Preview</h1>
     <p>Edit the code on the left to see changes instantly!</p>
-     
+    
 <\/body>
 </html>
 `;

@@ -16,7 +16,8 @@
     cursor: pointer;
     color: whitesmoke;
     display: none;
-    bottom: 0px;
+    bottom: 10px;
+    z-index: 5000;
 
 }
 

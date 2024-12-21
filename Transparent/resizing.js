@@ -22,7 +22,7 @@ handle.addEventListener('mousedown', (event) => {
     const resize = (e) => {
         newWidth = startWidth + (e.clientX - startX);
         resizable.style.width = `${newWidth}px`;
-        console.log(extra)
+        // console.log(extra)
 
     };
 

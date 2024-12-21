@@ -1,0 +1,55 @@
+.rateingContainer{
+
+    position: absolute;
+    background-color: rgb(160, 186, 210);
+    /* width: 990px;s */
+    z-index: 15000;
+    top: 0px;
+    left: 00px;
+    right: 0;
+    height:400px;
+    caret-color: black;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.rateingTXTarea{
+    width: 100%;
+    color: black;
+    /* border: 2px solid red; */
+    flex-grow: 1;
+    border-block-width: 0;
+}
+
+
+.controllBtnFedd{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.divBtnM{
+    /* border: 2px solid red; */
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: aliceblue;
+    font-family: sans-serif;
+
+}
+
+.Ms-Submit{
+    background-color: rgb(17, 201, 90);
+}
+
+.Ms-Canc{
+    background-color: rgb(201, 48, 17);
+    color: black;
+
+}
+
+.divBtnM:hover{
+    transform: scale(1.05);
+}

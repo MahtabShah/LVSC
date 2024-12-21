@@ -1,0 +1,41 @@
+.upperFiles {
+    height: 30px;
+    z-index: 2222;
+    background-color: #212121;
+    display: flex;
+    background-color: #0f0f10;
+    border-bottom: 1px solid rgba(73, 71, 71, 0.642);
+    justify-content: space-between;
+}
+
+
+.formateDiv{
+    width: 40px;
+    /* border: 2px solid red; */
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.formateDiv div{
+    border: 1px solid rgb(250, 246, 246);
+
+}
+
+.formateline1{
+    width: 50%;
+}
+
+.formateline3{
+    width: 70%;
+}
+
+.formateDiv:hover{
+    /* background-color:rgb(41, 40, 40); */
+    transform: scale(1.0851);
+    cursor: pointer;
+    
+}

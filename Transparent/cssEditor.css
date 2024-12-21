@@ -27,7 +27,7 @@ span.bracket, span.keyword {
 
 
 .scriptJS span.property {
-    color: #f7d705;
+    color: #27ff06;
 
 }
 
@@ -36,7 +36,7 @@ span.bracket, span.keyword {
 }
 
 .scriptJS span.method{
-    color: #0ca2f3;
+    color: #e4d90d;
     /* color: #dabf0b; */
 
 }
