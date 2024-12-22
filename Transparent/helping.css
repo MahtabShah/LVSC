@@ -97,6 +97,12 @@
 }
 
 
+.MslistOfCss2PropAto > div{
+
+    display: none;
+}
+
+
 .OnFileeditorBTN{
     background: #000000;
     color: #71dd10;

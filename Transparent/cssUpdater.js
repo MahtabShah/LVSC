@@ -1,6 +1,6 @@
 styleCSSpre = document.querySelector('pre.styleCSS');
-let AllCSSPreference = document.querySelectorAll('.MslistOfCss2PropAto span');
-let CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto');
+let AllCSSPreference = document.querySelectorAll('.MslistOfCss2PropAto .div-css-st-msc span');
+let CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto .div-css-st-msc');
 
 
 let CSSstr = '';
@@ -34,9 +34,14 @@ AreaCSS.addEventListener('input', (e) => {
     }
     else if (e.inputType === 'deleteContentBackward') {
         CSSstr = CSSstr.slice(0, -1);
+        if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
+            CSSPrefListContainer.classList.remove('MsactiveCssList');
+        }
     } else if (e.inputType === 'insertLineBreak') {
         CSSstr += '\n';
-
+        if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
+            CSSPrefListContainer.classList.remove('MsactiveCssList');
+        }
     }else if(e.data === '{'|| e.data === '}'){
         if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
             CSSPrefListContainer.classList.remove('MsactiveCssList');
@@ -152,6 +157,7 @@ function HighlightCSSLineDiv(lineDiv) {
 
 
 function searchCSSProperty(text) {
+    CSSPrefListContainer.innerHTML = '';
     let matches = [];
     AllCSSPreference.forEach((suggestion) => {
         let matchLength = text.length;
