@@ -9,6 +9,7 @@
 
 body {
     height: 100vh;
+    min-width:700px;
     /* background-color: #141414; */
 }
 
@@ -22,29 +23,16 @@ body {
     background-color: #3444f5;
 }
  
-.Section2 {
+.Section2 , .EditLive , .ch-Div  {
     display: flex;
     flex-grow: 1;
 }
 
-
-.EditLive {
-    display: flex;
-    flex-grow: 1;
-
-}
-
-.ch-Div {
-    /* border: 2px solid rgb(255, 2, 15); */
-    flex-grow: 1; 
-    display: flex;
-
-}
 
 .editor-container-area {
     display: flex;
     width: 60%;
-    min-width: 640px;
+    min-width: 340px;
     flex-direction: column;
     /* border: 2px solid red; */
 

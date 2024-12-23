@@ -1,5 +1,5 @@
 styleCSSpre = document.querySelector('pre.styleCSS');
-let AllCSSPreference = document.querySelectorAll('.MslistOfCss2PropAto .div-css-st-msc span');
+let AllCSSPreference = document.querySelectorAll('.MslistOfCss2PropAto span');
 let CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto .div-css-st-msc');
 
 
@@ -60,6 +60,10 @@ AreaCSS.addEventListener('input', (e) => {
 
 
 })
+
+
+
+
 
 AllCSSPreference.forEach(s => {
 
@@ -169,7 +173,13 @@ function searchCSSProperty(text) {
             CSSPrefListContainer.insertBefore(suggestion, CSSPrefListContainer.children[0]);
         }
     });
-    return matches.length > 0 ? matches[0] : text;
+    if (CSSPrefListContainer.children.length < 1 ) {
+        let span = document.createElement('span');
+        span.innerHTML = text;
+        CSSPrefListContainer.insertBefore(span, CSSPrefListContainer.children[0]);
+    }
+   
+    return matches.length > 0 ? matches[0] : text
 }
 
 

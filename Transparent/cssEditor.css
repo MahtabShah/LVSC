@@ -41,8 +41,8 @@ span.bracket, span.keyword {
 
 }
 
-span.keyword{
-    color: #205cff;
+span.keyword ,span.Keyword {
+    color: #2084ff;
     /* color: #dabf0b; */
 
 }
@@ -54,6 +54,37 @@ span.keyword{
     color: #ffe600;
 
 }
+
+.scriptJS span.Operator , span.number{
+    color: #0088ff;
+
+}
+
+.scriptJS span.Identifier{
+    color: #cce6eb;
+
+}
+
+
+.scriptJS span.Punctuator{
+    color: #fff423;
+
+}
+
+.scriptJS span.Object{
+    color: hsl(192, 99%, 49%);
+
+}
+.scriptJS span.DOMMethod , .scriptJS span.JSMethod{
+    color: #e5db1d;
+
+}
+
+.scriptJS span.Unknown ,.scriptJS  span.String{
+    color: #fc7e2b;
+
+}
+
 
 
 .activeLine{

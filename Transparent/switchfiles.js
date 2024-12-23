@@ -43,14 +43,140 @@ h1{
 p{
     font-family: sans-serif;
     padding-left: 20px;
-         
-}`;
+    
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+`;
 
 scriptJStextArea.value = `console.log("Hello")
 const h1 = document.querySelector('h1');
 h1.addEventListener('click' , (e)=>{
     h1.style.color = 'green';
-})`;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+`;
 
 scriptJSpre.innerHTML = scriptJStextArea.value;
 styleCSSpre.innerHTML = styleCSStextArea.value;
@@ -280,6 +406,58 @@ textarea.value = `<!DOCTYPE html>
     
 <\/body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 `;
 
 
@@ -381,8 +559,11 @@ function addSpacesBeforeLessThan(lineHtml, numSpaces) {
 function TagTypeditector(str) {
 
     str = str.trim(); // Remove extra spaces
-
-    if (/^<\w+[^>]*\/>$/.test(str)) {
+    const selfClosingTags = ['br', 'hr', 'meta', 'link', 'img', 'input', 'source', 'col', 'embed', 'track', 'area', 'base', 'wbr'];
+    if(selfClosingTags.includes(extractTag(str))){
+        return 'Self-closing tag';
+    }
+    else if (/^<\w+[^>]*\/>$/.test(str)) {
         return 'Self-closing tag'; // Matches self-closing tags like <img />, <br />, etc.
     } else if (/^<\w+[^>]*>$/.test(str)) {
         return 'Opening tag'; // Matches opening tags like <div>, <span>, etc.
