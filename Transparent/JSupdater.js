@@ -32,7 +32,7 @@ function highlightedJSCode(input) {
         }
 
     })
-    console.log(input)
+    // console.log(input)
     return input;
     // .replace(/(\b\w+\b|\S)/g,
     //     '<span class="word">$1</span>')
