@@ -9,21 +9,25 @@ function Hrline(TextAr) {
 
     let lastIN = TextAr.selectionStart;
     let lineNumber = TextAr.value.slice(0, lastIN).split('\n').length;
+    try {
+        if (Lineactive.classList.contains('activeLine')) {
 
-    if (Lineactive.classList.contains('activeLine')) {
+            Lineactive.classList.remove('activeLine');
+            Lineactive = document.querySelectorAll('.overline')[lineNumber];
+            Lineactive.classList.add('activeLine');
+        }
+    } catch (error) {
 
-        Lineactive.classList.remove('activeLine');
-        Lineactive = document.querySelectorAll('.overline')[lineNumber];
-        Lineactive.classList.add('activeLine');
     }
+
 
     let hrline = document.createElement('div');
     hrline.classList.add('overline');
     document.querySelector('.divvvvv').appendChild(hrline);
 
-    
 
-   
+
+
 }
 
 
