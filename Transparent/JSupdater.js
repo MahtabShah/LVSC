@@ -5,13 +5,22 @@ scriptJSpre = document.querySelector('pre.scriptJS');
 function highlightedJSCode(input) {
     let Typearr = tokenizeAndType(input);
     let allstring = findStringsBetweenQuotes(input);
-
+    let isString = false;
+    let isObj = false;
     input = '';
     Typearr.forEach(v => {
-        if (allstring.includes(v.value)) {
+        if ((v.value === `'` | v.value === `"`) || isString) {
             input += `<span class="${v.type} String">${v.value}</span>`;
-            
-        }else if (typeof window[v.value] === 'object' && window[v.value] !== null) {
+
+            if (((v.value === `'` | v.value === `"`) && isString)) {
+                isString = false;
+
+            } else {
+                isString = true;
+            }
+
+        }       
+        else if (typeof window[v.value] === 'object' && window[v.value] !== null) {
             input += `<span class="${v.type} Object">${v.value}</span>`;
         } else if (isJavaScriptNativeMethod(Object.prototype, v.value)) {
             input += `<span class="${v.type} JSMethod">${v.value}</span>`;
@@ -114,10 +123,15 @@ function isJSMethod(obj, methodName) {
 
 
 function isJavaScriptNativeMethod(obj, methodName) {
-    if (typeof obj[methodName] === 'function') {
-        return Function.prototype.toString.call(obj[methodName]).includes('[native code]');
+    try {
+        if (typeof obj[methodName] === 'function') {
+            return Function.prototype.toString.call(obj[methodName]).includes('[native code]');
+        }
+    } catch (error) {
+        return false;
+
     }
-    return false;
+
 }
 
 

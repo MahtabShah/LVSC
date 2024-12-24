@@ -85,8 +85,8 @@
 
 
 .activeLine {
-    border-top: 2px solid rgba(129, 127, 127, 0.274);
-    border-bottom: 2px solid rgba(129, 127, 127, 0.274);
+    /* border-top: 2px solid rgba(129, 127, 127, 0.274); */
+    /* border-bottom: 2px solid rgba(129, 127, 127, 0.274); */
     z-index: 8;
     /* background-color: rgb(27, 26, 26); */
  
@@ -107,4 +107,23 @@
     background: #000000;
     color: #71dd10;
 
+}
+
+@media (max-width:700px){
+.EditLive{
+    flex-direction: column;
+}
+
+.livePage{
+    height: 100vh;
+}
+
+.editor-container-area{
+    min-width: 100%;
+    height: 100vh;
+}
+
+.resizable-handle {
+display: none;
+}
 }
