@@ -32,7 +32,7 @@ body {
 .editor-container-area {
     display: flex;
     width: 60%;
-/*     min-width: 200px; */
+    min-width: 200px;
     flex-direction: column;
     /* border: 2px solid red; */
 
@@ -464,7 +464,7 @@ textarea:focus {
 /*     height: 40px; */
     background-color: rgb(5, 187, 232);
     position: absolute;
-    right: -10px;
+    right: -12px;
     bottom: 50%;
     z-index: 1000;
     cursor: pointer;
