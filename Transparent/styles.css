@@ -32,7 +32,7 @@ body {
 .editor-container-area {
     display: flex;
     width: 60%;
-    min-width: 340px;
+/*     min-width: 200px; */
     flex-direction: column;
     /* border: 2px solid red; */
 
