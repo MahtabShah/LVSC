@@ -222,13 +222,12 @@ pre::-webkit-scrollbar {
 
 .Mahtableft {
 
-    max-width: 40px;
-    min-width: 40px;
+    width: clamp(35px, 35px, 35px);
     border-right: 1px solid rgb(54 53 53 / 39%);
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
