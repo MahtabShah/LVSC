@@ -33,7 +33,7 @@ TextArea.addEventListener('keydown', (e) => {
         } else {
             if (searchLine()[1].trim() === '') {
 
-                setCaretWith(5);
+                setCaretWith(4);
                 // alert('jj')
             } else {
                 setCaretWith(0)
