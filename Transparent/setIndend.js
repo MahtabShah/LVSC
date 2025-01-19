@@ -1,11 +1,6 @@
-TextArea.addEventListener('keydown', (e) => {
-    setingInden(e);
-})
 
-
-
-TextArea.addEventListener('click', (e) => {
-    setingInden(e);
+['keydown', 'click'].forEach(event => {
+    TextArea.addEventListener(event, setingInden);
 });
 
 
