@@ -20,6 +20,8 @@ AreaCSS.addEventListener('keydown', (e) => {
     // alert(nowWritten)
 });
 
+
+// it is need to modify..........just use splitting propperty and find nowWritten
 AreaCSS.addEventListener('input', (e) => {
 
     CSSPrefListContainer.classList.add('MsactiveCssList');
@@ -179,7 +181,7 @@ function searchCSSProperty(text) {
         CSSPrefListContainer.insertBefore(span, CSSPrefListContainer.children[0]);
     }
    
-    return matches.length > 0 ? matches[0] : text
+    return matches.length > 0 ? matches[0] : '';
 }
 
 
