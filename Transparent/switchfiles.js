@@ -71,14 +71,14 @@ OnFilePre.classList.add('OnFileeditor');
  AreaCSS.addEventListener(event, (e) => {
     updateEditor()
     styleCSSpre.innerHTML = MahtabCsshighlightCSSWithEntities(styleCSStextArea.value);
-    Hrline(styleCSStextArea)
+    // Hrline(styleCSStextArea)
 });
 
 
     scriptJStextArea.addEventListener(event, (e) => {
     updateEditor()
     scriptJSpre.innerHTML = highlightedJSCode(scriptJStextArea.value);
-    Hrline(scriptJStextArea)
+    // Hrline(scriptJStextArea)
 });
 
 
