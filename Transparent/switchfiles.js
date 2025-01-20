@@ -68,102 +68,107 @@ OnFileHide.classList.add('OnFileeditorBTN');
 OnFileText.classList.add('OnFileeditor');
 OnFilePre.classList.add('OnFileeditor');
 
-
-textarea.addEventListener("input", () => {
-    updateEditor()
-    prevInditation = -3;
-});
-
-
-AreaCSS.addEventListener('input', (e) => {
-    updateEditor()
-    styleCSSpre.innerHTML = MahtabCsshighlightCSSWithEntities(styleCSStextArea.value);
-    Hrline(styleCSStextArea);
-});
-
-
-scriptJStextArea.addEventListener('input', (e) => {
-    updateEditor()
-    scriptJSpre.innerHTML = highlightedJSCode(scriptJStextArea.value);
-    Hrline(scriptJStextArea)
-});
-
-AreaCSS.addEventListener('click', (e) => {
+['click' , 'input' ].forEach(event=>{
+ AreaCSS.addEventListener(event, (e) => {
     updateEditor()
     styleCSSpre.innerHTML = MahtabCsshighlightCSSWithEntities(styleCSStextArea.value);
     Hrline(styleCSStextArea)
 });
 
 
-scriptJStextArea.addEventListener('click', (e) => {
+    scriptJStextArea.addEventListener(event, (e) => {
     updateEditor()
     scriptJSpre.innerHTML = highlightedJSCode(scriptJStextArea.value);
     Hrline(scriptJStextArea)
 });
 
 
-
-textarea.addEventListener("scroll", () => {
-    highlightedDiv.scrollTop = textarea.scrollTop; // Sync scrolling
-    document.querySelector('.divvvvv').scrollTop = textarea.scrollTop;// Sync scrolling
-
+    textarea.addEventListener(event, () => {
+    updateEditor()
+    prevInditation = -3;
+});
 });
 
 
-AreaCSS.addEventListener('scroll', (e) => {
-    styleCSSpre.scrollTop = AreaCSS.scrollTop; // Sync scrolling
-    document.querySelector('.divvvvv').scrollTop = AreaCSS.scrollTop;// Sync scrolling
+function syncScroll(source, targets) {
+    source.addEventListener('scroll', () => {
+        targets.forEach(target => {
+            target.scrollTop = source.scrollTop;
+        });
+    });
+}
 
-});
+
+syncScroll(textarea, [highlightedDiv, document.querySelector('.divvvvv')]);
+syncScroll(AreaCSS, [styleCSSpre, document.querySelector('.divvvvv')]);
+syncScroll(scriptJStextArea, [scriptJSpre, document.querySelector('.divvvvv')]);
 
 
-scriptJStextArea.addEventListener('scroll', (e) => {
-    scriptJSpre.scrollTop = scriptJStextArea.scrollTop; // Sync scrolling
-    document.querySelector('.divvvvv').scrollTop = scriptJStextArea.scrollTop;// Sync scrolling
 
-});
+// FilesClicker.forEach(f => {
+//     f.addEventListener('click', () => {
 
+//         if (OnFileHide.classList.contains('OnFileeditorBTN')) {
+//             OnFileHide.classList.remove('OnFileeditorBTN');
+//             OnFileHide = f;
+//             OnFileHide.classList.add('OnFileeditorBTN');
+
+//         }
+
+//         if (OnFileText.classList.contains('OnFileeditor')) {
+//             OnFileText.classList.remove('OnFileeditor');
+//             OnFileText = document.querySelector(`textarea.${f.id.valueOf()}`)
+//             OnFileText.classList.add('OnFileeditor');
+
+//         }
+
+//         if (OnFilePre.classList.contains('OnFileeditor')) {
+//             OnFilePre.classList.remove('OnFileeditor');
+//             OnFilePre = document.querySelector(`pre.${f.id.valueOf()}`)
+//             OnFilePre.classList.add('OnFileeditor');
+
+//         }
+
+//         CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto');
+//         HTMLlistContainer = document.querySelector('.MslistOfhtm2PropAto');
+
+
+//         if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
+//             CSSPrefListContainer.classList.remove('MsactiveCssList');
+//         }
+
+//         if (HTMLlistContainer.classList.contains('MsactiveCssList')) {
+//             HTMLlistContainer.classList.remove('MsactiveCssList');
+//         }
+
+//     });
+
+
+// });
+
+function toggleClass(element, className, newElement = null) {
+    if (element.classList.contains(className)) {
+        element.classList.remove(className);
+        if (newElement) {
+            element = newElement;
+            element.classList.add(className);
+        }
+    }
+    return element;
+}
 
 FilesClicker.forEach(f => {
     f.addEventListener('click', () => {
+        OnFileHide = toggleClass(OnFileHide, 'OnFileeditorBTN', f);
+        OnFileText = toggleClass(OnFileText, 'OnFileeditor', document.querySelector(`textarea.${f.id}`));
+        OnFilePre = toggleClass(OnFilePre, 'OnFileeditor', document.querySelector(`pre.${f.id}`));
 
-        if (OnFileHide.classList.contains('OnFileeditorBTN')) {
-            OnFileHide.classList.remove('OnFileeditorBTN');
-            OnFileHide = f;
-            OnFileHide.classList.add('OnFileeditorBTN');
-
-        }
-
-        if (OnFileText.classList.contains('OnFileeditor')) {
-            OnFileText.classList.remove('OnFileeditor');
-            OnFileText = document.querySelector(`textarea.${f.id.valueOf()}`)
-            OnFileText.classList.add('OnFileeditor');
-
-        }
-
-        if (OnFilePre.classList.contains('OnFileeditor')) {
-            OnFilePre.classList.remove('OnFileeditor');
-            OnFilePre = document.querySelector(`pre.${f.id.valueOf()}`)
-            OnFilePre.classList.add('OnFileeditor');
-
-        }
-
-        CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto');
-        HTMLlistContainer = document.querySelector('.MslistOfhtm2PropAto');
-
-
-        if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-            CSSPrefListContainer.classList.remove('MsactiveCssList');
-        }
-
-        if (HTMLlistContainer.classList.contains('MsactiveCssList')) {
-            HTMLlistContainer.classList.remove('MsactiveCssList');
-        }
-
+        // Toggle CSS and HTML list containers
+        document.querySelector('.MslistOfCss2PropAto').classList.remove('MsactiveCssList');
+        document.querySelector('.MslistOfhtm2PropAto').classList.remove('MsactiveCssList');
     });
-
-
 });
+
 
 
 
