@@ -7,7 +7,6 @@ const livePage = document.querySelector(".livePage iframe");
 let prevInditation = -3;
 
 
-
 let FilesClicker = document.querySelectorAll('.click-F');
 
 
@@ -98,53 +97,10 @@ function syncScroll(source, targets) {
     });
 }
 
-
+//document.querySelector('.divvvvv')  is for horizontal line 
 syncScroll(textarea, [highlightedDiv, document.querySelector('.divvvvv')]);
 syncScroll(AreaCSS, [styleCSSpre, document.querySelector('.divvvvv')]);
 syncScroll(scriptJStextArea, [scriptJSpre, document.querySelector('.divvvvv')]);
-
-
-
-// FilesClicker.forEach(f => {
-//     f.addEventListener('click', () => {
-
-//         if (OnFileHide.classList.contains('OnFileeditorBTN')) {
-//             OnFileHide.classList.remove('OnFileeditorBTN');
-//             OnFileHide = f;
-//             OnFileHide.classList.add('OnFileeditorBTN');
-
-//         }
-
-//         if (OnFileText.classList.contains('OnFileeditor')) {
-//             OnFileText.classList.remove('OnFileeditor');
-//             OnFileText = document.querySelector(`textarea.${f.id.valueOf()}`)
-//             OnFileText.classList.add('OnFileeditor');
-
-//         }
-
-//         if (OnFilePre.classList.contains('OnFileeditor')) {
-//             OnFilePre.classList.remove('OnFileeditor');
-//             OnFilePre = document.querySelector(`pre.${f.id.valueOf()}`)
-//             OnFilePre.classList.add('OnFileeditor');
-
-//         }
-
-//         CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto');
-//         HTMLlistContainer = document.querySelector('.MslistOfhtm2PropAto');
-
-
-//         if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-//             CSSPrefListContainer.classList.remove('MsactiveCssList');
-//         }
-
-//         if (HTMLlistContainer.classList.contains('MsactiveCssList')) {
-//             HTMLlistContainer.classList.remove('MsactiveCssList');
-//         }
-
-//     });
-
-
-// });
 
 function toggleClass(element, className, newElement = null) {
     if (element.classList.contains(className)) {
@@ -181,18 +137,13 @@ function updateEditor() {
 
     textContent = textContent.split('</head>');
 
-    // livePage.innerHTML = '';
     let style = textContent[0].match(/<style>[^]+/) ? textContent[0].match(/<style>[^]+/)[0].slice(7, -7).replace(/<\/?style>/g, '') : '';
     // livePage.contentDocument.body.innerHTML = textContent[1];
 
-
     const iframe = document.querySelector('.scriptIframe');
-
     const newIframe = iframe.cloneNode();
 
     iframe.parentNode.replaceChild(newIframe, iframe);
-
-
     const iframeDoc = newIframe.contentDocument || newIframe.contentWindow.document;
     iframeDoc.open()
     iframeDoc.write(`<!DOCTYPE html>
@@ -410,6 +361,11 @@ function TagTypeditector(str) {
 
 
 }
+
+// for comment
+ // else if (/^<!--\w+[^>]*\/-->$/.test(str)) {
+ //        return 'Self-closing tag'; // Matches self-closing tags like <img />, <br />, etc.
+ //    } 
 
 function getInditation(type) {
 
