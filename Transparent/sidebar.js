@@ -1,6 +1,8 @@
+const leftSide = document.querySelector(".left");
+leftSide.style.display = 'none';
 document.querySelector(".Mahtabfiles").addEventListener('click', () => {
-    document.querySelector(".left").classList.toggle('d-initial');
-    if(!document.querySelector(".left").classList.contains('d-initial')){
-         document.querySelector(".left").style.display = 'none';
+    leftSide.classList.toggle('d-initial');
+    if(!leftSide.classList.contains('d-initial')){
+        leftSide.style.display = 'none';
     }
 });
