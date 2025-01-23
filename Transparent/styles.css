@@ -240,6 +240,8 @@ pre::-webkit-scrollbar {
     position: relative;
     background-color: #141414;
     transition-duration: 300ms;
+
+    display: none;
 }
 
 
