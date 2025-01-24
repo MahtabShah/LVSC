@@ -24,44 +24,50 @@ AreaCSS.addEventListener('keydown', (e) => {
 // it is need to modify..........just use splitting propperty and find nowWritten
 AreaCSS.addEventListener('input', (e) => {
 
-    CSSPrefListContainer.classList.add('MsactiveCssList');
+    // CSSPrefListContainer.classList.add('MsactiveCssList');
 
-    if (e.data === ';') {
+    // if (e.data === ';') {
 
-        if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-            CSSPrefListContainer.classList.remove('MsactiveCssList');
-        }
+    //     if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
+    //         CSSPrefListContainer.classList.remove('MsactiveCssList');
+    //     }
 
-        CSSstr = '';
-    }
-    else if (e.inputType === 'deleteContentBackward') {
-        CSSstr = CSSstr.slice(0, -1);
-        if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-            CSSPrefListContainer.classList.remove('MsactiveCssList');
-        }
-    } else if (e.inputType === 'insertLineBreak') {
-        CSSstr += '\n';
-        if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-            CSSPrefListContainer.classList.remove('MsactiveCssList');
-        }
-    }else if(e.data === '{'|| e.data === '}'){
-        if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-            CSSPrefListContainer.classList.remove('MsactiveCssList');
-        }
-        CSSstr = '';
+    //     CSSstr = '';
+    // }
+    // else if (e.inputType === 'deleteContentBackward') {
+    //     CSSstr = CSSstr.slice(0, -1);
+    //     if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
+    //         CSSPrefListContainer.classList.remove('MsactiveCssList');
+    //     }
+    // } else if (e.inputType === 'insertLineBreak') {
+    //     CSSstr += '\n';
+    //     if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
+    //         CSSPrefListContainer.classList.remove('MsactiveCssList');
+    //     }
+    // // }else if(e.data === '{'|| e.data === '}'){
+    //     if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
+    //         CSSPrefListContainer.classList.remove('MsactiveCssList');
+    //     }
+    //     CSSstr = '';
 
-    } else if(e.data) {
-        CSSstr += e.data;
-    }
+    // } else if(e.data) {
+    //     CSSstr += e.data;
+    // }
 
-    let nowWritten = CSSstr.split('\n');
 
-    nowWritten = nowWritten ? nowWritten[nowWritten.length - 1] : '';
-    // console.log(CSSstr, nowWritten , e)
-    searchCSSProperty(nowWritten);
+     
+   let LastIndixe = TextArea.selectionStart;
+   const firstPart = TextArea.value.slice(0, LastIndixe);
+   let nowWritten = firstPart.split('\n');
+   nowWritten = nowWritten[nowWritten.length - 1].trim();
+   console.log(nowWritten);
+   nowWritten = nowWritten.includes(';') ? nowWritten : '';
+   searchCSSProperty(nowWritten);
 
 
 })
+
+
 
 
 
