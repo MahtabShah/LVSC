@@ -56,12 +56,12 @@ AreaCSS.addEventListener('input', (e) => {
 
 
      
-   let LastIndixe = TextArea.selectionStart;
-   const firstPart = TextArea.value.slice(0, LastIndixe);
+   let LastIndixe = AreaCSS.selectionStart;
+   const firstPart = AreaCSS.value.slice(0, LastIndixe);
    let nowWritten = firstPart.split('\n');
    nowWritten = nowWritten[nowWritten.length - 1].trim();
-   console.log(nowWritten);
-   nowWritten = nowWritten.includes(';') ? nowWritten : '';
+   nowWritten = nowWritten.includes(';') ? '' : nowWritten;
+   // console.log(nowWritten);
    searchCSSProperty(nowWritten);
 
 
@@ -174,7 +174,7 @@ function searchCSSProperty(text) {
     AllCSSPreference.forEach((suggestion) => {
         let matchLength = text.length;
 
-        if (suggestion.innerText.substr(0, matchLength) === text) {
+        if (suggestion.innerText.substr(0, matchLength) === text.trim()) {
             matches.push(suggestion.innerText);
 
             // Move matched suggestions to the top
@@ -186,6 +186,7 @@ function searchCSSProperty(text) {
         span.innerHTML = text;
         CSSPrefListContainer.insertBefore(span, CSSPrefListContainer.children[0]);
     }
+    console.log( matches[0] );
    
     return matches.length > 0 ? matches[0] : '';
 }
