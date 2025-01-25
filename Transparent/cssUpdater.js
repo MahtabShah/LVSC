@@ -11,51 +11,12 @@ AreaCSS.addEventListener('keydown', (e) => {
     if (e.key === 'Tab' && (CSSPrefListContainer.classList.contains('MsactiveCssList'))) {
         addCSSPrefrece(document.querySelectorAll('.MslistOfCss2PropAto span')[0], 0);
         CSSstr = '';
-
-
     }
-
-
-
-    // alert(nowWritten)
 });
 
 
 // it is need to modify..........just use splitting propperty and find nowWritten
-AreaCSS.addEventListener('input', (e) => {
-
-    // CSSPrefListContainer.classList.add('MsactiveCssList');
-
-    // if (e.data === ';') {
-
-    //     if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-    //         CSSPrefListContainer.classList.remove('MsactiveCssList');
-    //     }
-
-    //     CSSstr = '';
-    // }
-    // else if (e.inputType === 'deleteContentBackward') {
-    //     CSSstr = CSSstr.slice(0, -1);
-    //     if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-    //         CSSPrefListContainer.classList.remove('MsactiveCssList');
-    //     }
-    // } else if (e.inputType === 'insertLineBreak') {
-    //     CSSstr += '\n';
-    //     if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-    //         CSSPrefListContainer.classList.remove('MsactiveCssList');
-    //     }
-    // // }else if(e.data === '{'|| e.data === '}'){
-    //     if (CSSPrefListContainer.classList.contains('MsactiveCssList')) {
-    //         CSSPrefListContainer.classList.remove('MsactiveCssList');
-    //     }
-    //     CSSstr = '';
-
-    // } else if(e.data) {
-    //     CSSstr += e.data;
-    // }
-
-
-     
+AreaCSS.addEventListener('input', (e) => {  
    let LastIndixe = AreaCSS.selectionStart;
    const firstPart = AreaCSS.value.slice(0, LastIndixe);
    let nowWritten = firstPart.split('\n');
@@ -63,7 +24,6 @@ AreaCSS.addEventListener('input', (e) => {
    nowWritten = nowWritten.includes(';') ? '' : nowWritten;
    // console.log(nowWritten);
    searchCSSProperty(nowWritten);
-
 
 })
 
@@ -188,7 +148,10 @@ function searchCSSProperty(text) {
     }
     console.log( matches[0] );
    if(matches[0]){
-      CSSPrefListContainer.classList.toggle('MsactiveCssList');
+      CSSPrefListContainer.classList.add('MsactiveCssList');
+   }else{
+      CSSPrefListContainer.classList.remove('MsactiveCssList');
+      
    }
    
     return matches.length > 0 ? matches[0] : '';
