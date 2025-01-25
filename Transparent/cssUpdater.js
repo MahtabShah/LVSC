@@ -1,6 +1,7 @@
 styleCSSpre = document.querySelector('pre.styleCSS');
 let AllCSSPreference = document.querySelectorAll('.MslistOfCss2PropAto span');
 let CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto .div-css-st-msc');
+let CSSList = document.querySelector('.MslistOfCss2PropAto');
 
 
 let CSSstr = '';
@@ -57,8 +58,8 @@ function addCSSPrefrece(s, n) {
 
     AreaCSS.value = firstPart + middlePart + '\n    ' + lastpart;
     PreareaCss.innerHTML = MahtabCsshighlightCSSWithEntities(AreaCSS.value)
-    updateEditor()
-    AreaCSS.setSelectionRange(LastIndixe + 1, LastIndixe + 1)
+    updateEditor();
+    AreaCSS.setSelectionRange(LastIndixe + 1, LastIndixe + 1);
 
     setTimeout(() => {
         AreaCSS.focus()
@@ -71,6 +72,7 @@ function addCSSPrefrece(s, n) {
     // StrTag = '';
 
     CSSPrefListContainer.classList.remove('MsactiveCssList');
+    CSSPrefList.classList.remove('MsactiveCssList');
 
 
 
@@ -141,18 +143,13 @@ function searchCSSProperty(text) {
             CSSPrefListContainer.insertBefore(suggestion, CSSPrefListContainer.children[0]);
         }
     });
-    if (CSSPrefListContainer.children.length < 1 ) {
-        let span = document.createElement('span');
-        span.innerHTML = text;
-        CSSPrefListContainer.insertBefore(span, CSSPrefListContainer.children[0]);
-    }
-    console.log( matches[0] );
-   if(matches[0]){
-      CSSPrefListContainer.classList.add('MsactiveCssList');
-   }else{
-      CSSPrefListContainer.classList.remove('MsactiveCssList');
-      
-   }
+
+    // console.log( matches[0] );
+
+const action = matches[0] ? 'add' : 'remove';
+CSSPrefListContainer.classList[action]('MsactiveCssList');
+CSSList.classList[action]('MsactiveCssList');
+
    
     return matches.length > 0 ? matches[0] : '';
 }
