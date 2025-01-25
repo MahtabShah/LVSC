@@ -187,6 +187,9 @@ function searchCSSProperty(text) {
         CSSPrefListContainer.insertBefore(span, CSSPrefListContainer.children[0]);
     }
     console.log( matches[0] );
+   if(matches[0]){
+      CSSPrefListContainer.classList.toggle('MsactiveCssList');
+   }
    
     return matches.length > 0 ? matches[0] : '';
 }
