@@ -18,16 +18,21 @@ AreaCSS.addEventListener('keydown', (e) => {
 
 // it is need to modify..........just use splitting propperty and find nowWritten
 AreaCSS.addEventListener('input', (e) => {  
-   let LastIndixe = AreaCSS.selectionStart;
+  
+   // console.log(nowWritten);
+   searchCSSProperty(nowWrite());
+
+})
+
+
+function nowWrite(){
+    let LastIndixe = AreaCSS.selectionStart;
    const firstPart = AreaCSS.value.slice(0, LastIndixe);
    let nowWritten = firstPart.split('\n');
    nowWritten = nowWritten[nowWritten.length - 1].trim();
    nowWritten = nowWritten.includes(';') ? '' : nowWritten;
-   // console.log(nowWritten);
-   searchCSSProperty(nowWritten);
-
-})
-
+   return nowWritten;
+}
 
 
 
@@ -47,9 +52,7 @@ AllCSSPreference.forEach(s => {
 
 function addCSSPrefrece(s, n) {
     let LastIndixe = AreaCSS.selectionStart;
-    let nowWritten = CSSstr.split('\n');
-
-    nowWritten = nowWritten ? nowWritten[nowWritten.length - 1] : '';
+    let nowWritten = nowWrite();
     let firstPart = AreaCSS.value.slice(0, LastIndixe - nowWritten.length);
     CSSstr = '';
     const lastpart = AreaCSS.value.slice(LastIndixe);
@@ -63,16 +66,15 @@ function addCSSPrefrece(s, n) {
 
     setTimeout(() => {
         AreaCSS.focus()
-
         AreaCSS.setSelectionRange(LastIndixe + s.innerText.length + 5 + n - nowWritten.length, LastIndixe + 5 + n + s.innerText.length - nowWritten.length)
         AreaCSS.style.caretColor = 'red';
 
     }, 0);
 
     // StrTag = '';
-
+   
     CSSPrefListContainer.classList.remove('MsactiveCssList');
-    CSSPrefList.classList.remove('MsactiveCssList');
+    CSSPrefList.classList.toggle('MsactiveCssList');
 
 
 
