@@ -58,12 +58,11 @@
 
 .MsactiveCssList {
     display: flex;
-    z-index: 6666666;
-        flex-direction: column;
 }
 .div-css-st-msc{
-     z-index: 6666666;
-     flex-direction: column;
+    display: flex;
+    z-index: 6666666;
+    flex-direction: column;
 }
 
 
