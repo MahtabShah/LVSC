@@ -5,7 +5,7 @@
     position: absolute;
     right: 50%;
     left: 400px;
-    height: 400px;
+/*     height: 400px; */
     top: 240px;
     display: flex;
     flex-direction: column;
@@ -59,6 +59,7 @@
 .MsactiveCssList {
     display: flex;
     z-index: 6666666;
+        flex-direction: column;
 }
 
 .divvvvv {
@@ -96,12 +97,11 @@
     width: 0;
 }
 
-
+/* 
 .MslistOfCss2PropAto > div{
-
     display: none;
 }
-
+ */
 
 .OnFileeditorBTN{
     background: #000000;
