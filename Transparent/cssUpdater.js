@@ -73,8 +73,8 @@ function addCSSPrefrece(s, n) {
 
     // StrTag = '';
    
-    CSSPrefListContainer.classList.remove('MsactiveCssList');
-    CSSPrefList.classList.toggle('MsactiveCssList');
+    // CSSPrefListContainer.classList.remove('MsactiveCssList');
+    CSSList.classList.toggle('MsactiveCssList');
 
 
 
