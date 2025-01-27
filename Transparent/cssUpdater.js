@@ -3,26 +3,15 @@ let AllCSSPreference = document.querySelectorAll('.MslistOfCss2PropAto span');
 let CSSPrefListContainer = document.querySelector('.MslistOfCss2PropAto .div-css-st-msc');
 let CSSList = document.querySelector('.MslistOfCss2PropAto');
 
-
-let CSSstr = '';
-
-AreaCSS.addEventListener('keydown', (e) => {
-
-   
-    if (e.key === 'Tab' && (CSSPrefListContainer.classList.contains('MsactiveCssList'))) {
-        addCSSPrefrece(document.querySelectorAll('.MslistOfCss2PropAto span')[0], 0);
-        CSSstr = '';
-    }
-});
-
-
-// it is need to modify..........just use splitting propperty and find nowWritten
-AreaCSS.addEventListener('input', (e) => {  
-  
-   // console.log(nowWritten);
+['input' , 'keydown'].forEach(ac=>{
+AreaCSS.addEventListener(ac, (e) => {  
    searchCSSProperty(nowWrite());
-
+   
+ if (e.key === 'Tab' && (CSSPrefListContainer.classList.contains('MsactiveCssList'))) {
+        addCSSPrefrece(document.querySelectorAll('.MslistOfCss2PropAto span')[0], 0); }
+    })
 })
+
 
 
 function nowWrite(){
@@ -54,7 +43,7 @@ function addCSSPrefrece(s, n) {
     let LastIndixe = AreaCSS.selectionStart;
     let nowWritten = nowWrite();
     let firstPart = AreaCSS.value.slice(0, LastIndixe - nowWritten.length);
-    CSSstr = '';
+
     const lastpart = AreaCSS.value.slice(LastIndixe);
     let middlePart = ' '.repeat(n)+ s.innerText;
 
@@ -70,8 +59,6 @@ function addCSSPrefrece(s, n) {
         AreaCSS.style.caretColor = 'red';
 
     }, 0);
-
-    // StrTag = '';
    
     // CSSPrefListContainer.classList.remove('MsactiveCssList');
     CSSList.classList.toggle('MsactiveCssList');
