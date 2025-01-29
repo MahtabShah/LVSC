@@ -364,7 +364,7 @@ function TagTypeditector(str) {
 
 // for comment
  // else if (/^<!--\w+[^>]*\/-->$/.test(str)) {
- //        return 'Self-closing tag'; // Matches self-closing tags like <img />, <br />, etc.
+ //        return 'Self-closing tag'; //
  //    } 
 
 function getInditation(type) {
@@ -391,43 +391,43 @@ function getInditation(type) {
     return '&nbsp;'.repeat(prevInditation);
 }
 
-function mergeThreeLine(l1, l2, l3) {
+// function mergeThreeLine(l1, l2, l3) {
 
-    if (TagTypeditector(l1.innerText) === 'openingTag' && TagTypeditector(l3.innerText) === 'closingTag') {
-        // console.log("call in if", l3.innerText)
+//     if (TagTypeditector(l1.innerText) === 'openingTag' && TagTypeditector(l3.innerText) === 'closingTag') {
+//         // console.log("call in if", l3.innerText)
 
-        if (extractTag(l1.innerText.replaceAll('\n', '')) === extractTag(l3.innerText.replaceAll('\n', '').replace('/', ''))) {
+//         if (extractTag(l1.innerText.replaceAll('\n', '')) === extractTag(l3.innerText.replaceAll('\n', '').replace('/', ''))) {
 
-            // console.log("Ente if")
-
-
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            context.font = '16px monospace';
-
-            let takingspaceTag = context.measureText(l1.innerText + l3.innerText.trim()).width;
-
-            context.font = `${window.getComputedStyle(l2).font}`;
-            let takingspaceContent = context.measureText(l2.innerText.trim()).width;
-
-            console.log(takingspaceTag + takingspaceContent, l1.clientWidth)
-
-            if (takingspaceTag + takingspaceContent < parseInt(window.getComputedStyle(EditorArea).width)) {
-                // console.log("Enter comp if")
-                l1.innerHTML = l1.innerHTML + l2.innerHTML + l3.innerHTML;
-                l1.querySelectorAll('.Brace')[2].innerHTML = l1.querySelectorAll('.Brace')[2].innerHTML.replaceAll('&nbsp;', '')
-
-                l2.remove();
-                l3.remove();
+//             // console.log("Ente if")
 
 
+//             const canvas = document.createElement('canvas');
+//             const context = canvas.getContext('2d');
+//             context.font = '16px monospace';
 
-            }
+//             let takingspaceTag = context.measureText(l1.innerText + l3.innerText.trim()).width;
 
-        }
+//             context.font = `${window.getComputedStyle(l2).font}`;
+//             let takingspaceContent = context.measureText(l2.innerText.trim()).width;
 
-    }
-}
+//             console.log(takingspaceTag + takingspaceContent, l1.clientWidth)
+
+//             if (takingspaceTag + takingspaceContent < parseInt(window.getComputedStyle(EditorArea).width)) {
+//                 // console.log("Enter comp if")
+//                 l1.innerHTML = l1.innerHTML + l2.innerHTML + l3.innerHTML;
+//                 l1.querySelectorAll('.Brace')[2].innerHTML = l1.querySelectorAll('.Brace')[2].innerHTML.replaceAll('&nbsp;', '')
+
+//                 l2.remove();
+//                 l3.remove();
+
+
+
+//             }
+
+//         }
+
+//     }
+// }
 
 function extractTag(str) {
     const match = str.match(/^<\s*([^\s>]+)/);
