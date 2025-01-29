@@ -1,3 +1,8 @@
+AreaCSS = document.querySelector('#CSSCodeInput');
+
+AreaCSS.addEventListener('keydown', (e) => {
+    setCssIndent(e)
+});
 
 ['keydown', 'click'].forEach(event => {
     TextArea.addEventListener(event, setingInden);
@@ -107,70 +112,6 @@ function extractTag(str) {
     const match = str.match(/^<\s*([^\s>]+)/);
     return match ? match[0] : null;
 }
-
-TextArea.addEventListener('click', (e) => {
-    mooveBox()
-})
-
-
-function mooveBox() {
-    let LastIndixe = TextArea.selectionStart;
-
-    const firstPart = TextArea.value.slice(0, LastIndixe);
-    const lastpart = TextArea.value.slice(LastIndixe);
-
-    let prevTag = firstPart.slice(0, LastIndixe).replace(/>\s*[^<]+</g, '>.<').split('.');
-    prevTag = prevTag[prevTag.length - 1];
-
-    let aboveLine = firstPart.match(/\n/g).length
-
-    let index = 0;
-
-    try {
-        index = lastpart.match(extractTag(prevTag)).index
-
-    } catch (error) {
-        index = 0;
-    }
-
-    let belowLine = '0';
-
-    try {
-        belowLine = lastpart.slice(0, index).match(/\n/g).length;
-
-
-    }
-    catch {
-        belowLine = '0';
-
-    }
-
-    // alert(aboveLine)
-    // alert(belowLine)
-
-
-
-
-    const height = (belowLine) * 24;
-    const top = aboveLine * 24;
-
-    document.querySelector('.verline').style.height = `${height}px`;
-    document.querySelector('.verline').style.top = `${11.6 + top + 12}px`;
-}
-
-
-AreaCSS = document.querySelector('#CSSCodeInput');
-
-AreaCSS.addEventListener('keydown', (e) => {
-    setCssIndent(e)
-});
-
-
-// scriptJStextArea.addEventListener('input', (e) => {
-
-// });
-
-
 
 function setCssIndent(e) {
     let LastIndixe = AreaCSS.selectionStart;
