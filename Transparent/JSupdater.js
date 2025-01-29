@@ -43,24 +43,6 @@ function highlightedJSCode(input) {
     })
     // console.log(input)
     return input;
-    // .replace(/(\b\w+\b|\S)/g,
-    //     '<span class="word">$1</span>')
-
-    // Highlight keywords
-    // .replace(/\b(const|let|var|function|return|if|else|for|while|do|switch|case|break|continue|try|catch|finally|throw|new|class|extends|import|export|typeof|instanceof|delete)\b/g, 
-    //     '<span class="keyword">$1</span>')
-    // // Highlight numbers
-    // .replace(/\b\d+(\.\d+)?\b/g, '<span class="number">$&</span>')
-    // .replace(/\.([\w]+)\(/g, '.<span class="method">$1</span>(')
-    // // // Highlight strings
-
-    // // // Highlight booleans
-    // .replace(/\b(true|false|null|undefined)\b/g, '<span class="boolean">$1</span>')
-    // // Highlight brackets
-    // .replace(/([{}()\[\]])/g, '<span class="bracket">$1</span>')
-    // .replace(/\.([\w]+)\./g, '.<span class="object">$1</span>.')
-    // .replace(/([^>\()]+['"])+[$<\))]/g , `<span class="str">$1</span><`)
-    // .replace(/(\.([\w])+\s*[$\=])/g, '<span class="property">$1</span>')
 }
 
 
@@ -87,34 +69,20 @@ function tokenizeAndType(str) {
     return types;
 }
 
+
 function findStringsBetweenQuotes(input) {
-    let results = [];
-    let quoteChar = null; // Tracks whether we're inside single or double quotes
-    let currentString = "";
+    let results = [], quoteChar = null, currentString = "";
 
     for (let char of input) {
         if (char === "'" || char === '"') {
-            // Toggle the quoteChar
-            if (quoteChar === null) {
-                quoteChar = char; // Starting a quoted string
-            } else if (quoteChar === char) {
-                results.push(currentString); // Close the string and store it
-                quoteChar = null;
-                currentString = ""; // Reset the current string
-            } else {
-                currentString += char; // Mismatched quotes, keep adding
-            }
-        } else if (quoteChar) {
-            // Append characters to the current string if inside quotes
-            currentString += char;
-        }
+            if (quoteChar === char) results.push(currentString), quoteChar = null, currentString = "";
+            else if (!quoteChar) quoteChar = char;
+            else currentString += char;
+        } else if (quoteChar) currentString += char;
     }
 
     return results;
 }
-
-// Example Usage
-// Output: [ 'sample string', 'multiple quotes', 'examples' ]
 
 
 function isJSMethod(obj, methodName) {
@@ -138,10 +106,6 @@ function isJavaScriptNativeMethod(obj, methodName) {
 function isJavaScriptNativeProperty(target, propertyName) {
     return target && typeof target[propertyName] !== 'undefined' && typeof target[propertyName] !== 'function';
 }
-
-console.log(isJavaScriptNativeMethod(Object.prototype, 'console')); // true
-console.log(isJavaScriptNativeMethod(Element.prototype, 'querySelector'));
-
 
 function JSupdateEditor() {
     const text = scriptJStextArea.value;
