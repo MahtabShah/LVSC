@@ -17,6 +17,14 @@ codeditor.addEventListener("input" , (e)=>{
 function emmetGenerator(str){
 
   let sign = str.replace(/[\w]+/g , "").split("");
-  let syntax = str.match(/[\w]+/g);
+  let tagName = str.match(/[\w]+/g);
+  let attr = "class";
+  let content = "content"
+  
+  function TagtGenerator(tagName, attr , content ){
+    let element = document.createElement(tagName);
+    element.append(content);
+  }
+  
   
 }
