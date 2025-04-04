@@ -26,7 +26,11 @@ document.getElementById('shareBtn').addEventListener('click', async () => {
 document.getElementById('reset').addEventListener('click', () => {
    document.querySelectorAll('.DivtextAr > textarea').forEach(ed=>{
        ed.value = "";
-    })
+    });
+    
+    updateEditor();
+    JSupdateEditor();
+    MahtabCssupdateEditor();
 });
 
 
