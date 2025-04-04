@@ -24,13 +24,14 @@ document.getElementById('shareBtn').addEventListener('click', async () => {
 
 
 document.getElementById('reset').addEventListener('click', () => {
-   document.querySelectorAll('.DivtextAr > textarea').forEach(ed=>{
+    document.querySelectorAll('.DivtextAr > textarea').forEach(ed=>{
        ed.value = "";
     });
+
+    document.querySelectorAll("#preArea .overT").forEach(pr=>{
+       pr.textContent = "";
+    });
     
-    updateEditor();
-    JSupdateEditor();
-    MahtabCssupdateEditor();
 });
 
 
