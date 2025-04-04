@@ -24,7 +24,7 @@ document.getElementById('shareBtn').addEventListener('click', async () => {
 
 
 document.getElementById('reset').addEventListener('click', () => {
-   document.querySelectorAll('overT').forEach(ed=>{
+   document.querySelectorAll('.overT').forEach(ed=>{
        ed.textContent = "";
     })
 });
