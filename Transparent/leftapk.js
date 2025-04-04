@@ -24,8 +24,8 @@ document.getElementById('shareBtn').addEventListener('click', async () => {
 
 
 document.getElementById('reset').addEventListener('click', () => {
-   document.querySelectorAll('.overT').forEach(ed=>{
-       ed.innerHTML = "";
+   document.querySelectorAll('.DivtextAr > textarea').forEach(ed=>{
+       ed.value = "";
     })
 });
 
