@@ -33,7 +33,7 @@ document.getElementById('reset').addEventListener('click', () => {
     });
 
     updateEditor();
-    
+    JSupdater();    
 });
 
 
@@ -93,4 +93,42 @@ document.querySelector('.Ms-Canc').addEventListener('click', () => {
     document.querySelector('.rateingContainer').style.display = 'none';
 
 });
+
+
+
+
+
+
+
+document.getElementById('settings').addEventListener('click', async () => {
+   document.getElementById('settings').classList.add("settings-open");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
