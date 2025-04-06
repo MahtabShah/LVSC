@@ -101,7 +101,7 @@ document.querySelector('.Ms-Canc').addEventListener('click', () => {
 
 
 document.getElementById('settings').addEventListener('click', async () => {
-   document.getElementById('settings').classList.add("settings-open");
+   document.getElementById('settings').classList.toggle("settings-open");
 });
 
 
