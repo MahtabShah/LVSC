@@ -114,6 +114,13 @@
 
 }
 
+
+
+.settings-open i{
+    transform: rotateZ(80deg);
+    transition-duration: 400ms;
+}
+
 @media (max-width:700px){
 .EditLive{
     flex-direction: column;
