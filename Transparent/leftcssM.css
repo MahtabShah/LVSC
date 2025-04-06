@@ -56,11 +56,9 @@
 
 
 
-.settings-open{
-
-tramsform: rotateX(90deg);
-
-
+.settings-open i{
+    transform: rotateZ(80deg);
+    transition-duration: 400ms;
 }
 
 
