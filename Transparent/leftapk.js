@@ -100,7 +100,7 @@ document.querySelector('.Ms-Canc').addEventListener('click', () => {
 
 
 
-document.getElementById('settings').addEventListener('click', async () => {
+document.getElementById('settings').addEventListener('click', () => {
    document.getElementById('settings').classList.toggle("settings-open");
 });
 
