@@ -31,6 +31,8 @@ document.getElementById('reset').addEventListener('click', () => {
     document.querySelectorAll("#preArea .overT").forEach(pr=>{
        pr.textContent = "";
     });
+
+    updateEditor();
     
 });
 
