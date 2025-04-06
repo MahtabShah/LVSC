@@ -53,3 +53,16 @@
 .divBtnM:hover{
     transform: scale(1.05);
 }
+
+
+
+.settings-open{
+
+tramsform: rotateX(90deg);
+
+
+}
+
+
+
+
