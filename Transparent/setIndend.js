@@ -132,7 +132,7 @@ function setCssIndent(e) {
         AreaCSS.setSelectionRange(LastIndixe, LastIndixe);
 
         setTimeout(() => {
-            AreaCSS.setSelectionRange(LastIndixe + 6, LastIndixe + 6);
+            AreaCSS.setSelectionRange(LastIndixe + indentNum + 2, LastIndixe + indentNum + 2);
 
             AreaCSS.style.caretColor = 'red';
 
