@@ -1,3 +1,6 @@
+let indentNum = 4;
+
+
 AreaCSS = document.querySelector('#CSSCodeInput');
 
 AreaCSS.addEventListener('keydown', (e) => {
@@ -40,13 +43,13 @@ function setingInden(e) {
 
         for (let i = 2; i < prevTag.length; i++) {
             if (TagTypeditector(prevTag[i].trim()) === "Closing tag") {
-                beforeSpace -= 4;
+                beforeSpace -= indentNum;
             } else if (TagTypeditector(prevTag[i].trim()) === "Self-closing tag") {
                 beforeSpace += 0;
             }
 
             else {
-                beforeSpace += 4;
+                beforeSpace += indentNum;
             }
         }
 
@@ -64,7 +67,7 @@ function setingInden(e) {
         remainingPart = remainingPart ? remainingPart[0] : '';
 
         if (TagTypeditector(remainingPart.trim()) === "Closing tag") {
-            let befor = beforeSpace - 4;
+            let befor = beforeSpace - indentNum;
             if (befor < 0) {
                 befor = 0;
             }
@@ -146,7 +149,7 @@ function setCssIndent(e) {
         // space = space ? space[space.length-1]:''
 
         if ((firstPart.trim().endsWith(';') || firstPart.trim().endsWith('{'))) {
-            space = ' '.repeat(4)
+            space = ' '.repeat(indentNum)
         }
         if (lastpart.startsWith('}')) {
             space += '\n';
@@ -215,7 +218,7 @@ function formateCode() {
 
                 linestring += parts[i];
                 if (parts.length === 1) {
-                    In = -4;
+                    In = -indentNum;
 
                 }
 
@@ -253,12 +256,12 @@ function getTextIndentation(str) {
     for (let k = 0; k < Resparts.length; k++) {
 
         if (TagTypeditector(Resparts[k]) === "Opening tag") {
-            RS += 4;
+            RS += indentNum;
 
         }
 
         if (TagTypeditector(Resparts[k]) === "Closing tag") {
-            RS -= 4;
+            RS -= indentNum;
 
         }
     }
