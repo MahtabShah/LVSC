@@ -126,13 +126,20 @@ FilesClicker.forEach(f => {
 });
 
 
+// let reactTXTareaValue = "";
+
+function getReactTXTValue() {
+        const iframe = document.getElementById("reactTXTarea");
+        return iframe.contentWindow.document.getElementById("reactTXTarea").value || " ";
+    
+}
 
 
 function updateEditor() {
+    let reactTXTareaValue = getReactTXTValue() || " ";
 
     let textContent = textarea.value;
     const text = textContent.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace('/', '&#47;');
-
     PreHTML.innerHTML = highlightSyntax(text);
 
     textContent = textContent.split('</head>');
@@ -168,8 +175,8 @@ function updateEditor() {
     </head>
     <body>
       ${textContent[1]}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3xJpX3VjKb2iQkpZMb+Ci3TcWn9X+gDjZ+3qgQnUTo1JvHcEXG62Lf+dqKjp9zF" crossorigin="anonymous"></script>
-
+      ${reactTXTareaValue}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3xJpX3VjKb2iQkpZMb+Ci3TcWn9X+gDjZ+3qgQnUTo1JvHcEXG62Lf+dqKjp9zF" crossorigin="anonymous"></script>
       <script>
        ${scriptJStextArea.value}
       <\/script>
