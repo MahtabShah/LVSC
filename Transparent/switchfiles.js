@@ -177,6 +177,9 @@ function updateEditor() {
       ${textContent[1]}
       ${reactTXTareaValue}
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3xJpX3VjKb2iQkpZMb+Ci3TcWn9X+gDjZ+3qgQnUTo1JvHcEXG62Lf+dqKjp9zF" crossorigin="anonymous"></script>
+       <script type="text/babel" >
+       ${scriptJStextArea.value}
+      <\/script>
       <script>
        ${scriptJStextArea.value}
       <\/script>
