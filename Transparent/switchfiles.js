@@ -176,7 +176,7 @@ function updateEditor() {
     <body>
       ${textContent[1]}
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3xJpX3VjKb2iQkpZMb+Ci3TcWn9X+gDjZ+3qgQnUTo1JvHcEXG62Lf+dqKjp9zF" crossorigin="anonymous"></script>
-      <script>
+      <script type="text/babel">
        ${scriptJStextArea.value}
       <\/script>
     <\/body>
