@@ -56,6 +56,15 @@ h1.addEventListener('click' , (e)=>{
 });
 
 
+function App() {
+  return (
+    <div className="text-center bg-white p-6 rounded-xl shadow-lg">
+      <h1 className="text-2xl font-bold text-blue-600">Hello i am React Component</h1>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 `;
 
@@ -167,7 +176,7 @@ function updateEditor() {
        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
        
        <!-- tailwindcss -->
-      ${tailwindCondition ?  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> : ""}
+      // ${tailwindCondition ?  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> : ""}
 
        <!-- React & Babel CDN -->
        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
@@ -265,7 +274,7 @@ textarea.value = `<!DOCTYPE html>
     
     <h1>Welcome to the Live Preview</h1>
     <p>Edit the code on the left to see changes instantly!</p>
-    
+    <div id="root"></div> 
 <\/body>
 </html>
 `;
